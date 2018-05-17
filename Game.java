@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Game {
   static byte j = 0, k = 0, m = 0, n = 0, i12 = 0;
-  static int i10 = 0, answr = 0;
+  static int answr = 0, ii = 0;
   static String i9 = "";
 
   public static void main(String[] args) {
@@ -18,8 +18,9 @@ public class Game {
       x.start();
 
       Bot.ans();
+      ii = Bot.i10;
 
-      System.out.print("Do you wonna know wrong one?\n");
+      System.out.print("Do you wanna know wrong one?\n");
       LOOP1:
       do {
         switch (i9) {
@@ -34,7 +35,7 @@ public class Game {
             break;
         }
       } while (true);
-      System.out.print("Do you wonna change your choice?yes/no\n");
+      System.out.print("Do you wanna change your choice?\nyes/no\n");
       LOOP2:
       do {
         i9 = sc.next();
@@ -56,7 +57,7 @@ public class Game {
         System.out.print("You lose.\n");
         --j;
       }
-      System.out.print("Do you wonna replay? yes/no\n");
+      System.out.print("Do you wanna replay?\nyes/no\n");
       while (m == 0) {
 
         i9 = sc.next();
