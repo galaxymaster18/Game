@@ -6,25 +6,13 @@ import java.util.Random;
 public class Game {
   static Scanner sc = new Scanner(System.in);
   static Random r = new Random();
-  static byte a = 0, b = 0, c = 0, d = 0, e = 0;
-  static int x = 0;
+  static byte a[] = new byte[5];
   static String i = "";
 
   public static void main(String[] args) {
     LOOP:
     while (true) {
-      x = r.nextInt(2);
-      switch (x) {
-        case 0:
-          ++a;
-          break;
-        case 1:
-          ++b;
-          break;
-        case 2:
-          ++c;
-          break;
-      }
+      ++a[(byte) r.nextInt(2)];
       ans();
       System.out.print("Do you wanna know wrong one?\nyes/no\n");
       LOOP1:
@@ -32,11 +20,11 @@ public class Game {
         i = sc.next();
         switch (i) {
           case "yes":
-            if (a == 0 && e != 1) {
+            if (a[0] == 0 && a[3] != 1) {
               System.out.print("1 is wrong\n");
-            } else if (b == 0 && e != 2) {
+            } else if (a[1] == 0 && a[3] != 2) {
               System.out.print("2 is wrong\n");
-            } else if (c == 0 && e != 3) {
+            } else if (a[2] == 0 && a[3] != 3) {
               System.out.print("3 is wrong\n");
             }
             break LOOP1;
@@ -61,7 +49,7 @@ public class Game {
             System.out.print("yes/no\n");
         }
       } while (true);
-      if (d == 1) {
+      if (a[4] == 1) {
         System.out.print("You win!\n");
       } else {
         System.out.print("You lose.\n");
@@ -85,20 +73,20 @@ public class Game {
   }
 
   public static void ans() {
-    LOOP4:
+    LOOP3:
     do {
       System.out.print("Input 1, 2 or 3\n");
-      e = sc.nextByte();
-      switch (e) {
+      a[3] = sc.nextByte();
+      switch (a[3]) {
         case 1:
-          d = a;
-          break LOOP4;
+          a[4] = a[0];
+          break LOOP3;
         case 2:
-          d = b;
-          break LOOP4;
+          a[4] = a[1];
+          break LOOP3;
         case 3:
-          d = c;
-          break LOOP4;
+          a[4] = a[2];
+          break LOOP3;
       }
     } while (true);
   }
