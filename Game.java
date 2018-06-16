@@ -12,11 +12,11 @@ public class Game {
   public static void main(String[] args) {
     LOOP:
     while (true) {
-      ++a[(byte) r.nextInt(2)];
+      ++a[r.nextInt(2)];
       ans();
       System.out.print("Do you wanna know wrong one?\nyes/no\n");
       LOOP1:
-      do {
+      while (true) {
         i = sc.next();
         switch (i) {
           case "yes":
@@ -34,10 +34,10 @@ public class Game {
             System.out.print("yes/no\n");
             break;
         }
-      } while (true);
+      };
       System.out.print("Do you wanna change your choice?\nyes/no\n");
       LOOP2:
-      do {
+      while (true) {
         i = sc.next();
         switch (i) {
           case "yes":
@@ -48,7 +48,7 @@ public class Game {
           default:
             System.out.print("yes/no\n");
         }
-      } while (true);
+      };
       if (a[4] == 1) {
         System.out.print("You win!\n");
       } else {
@@ -56,7 +56,7 @@ public class Game {
       }
       System.out.print("Do you wanna replay?\nyes/no\n");
       LOOP3:
-      do {
+      while (true){
         i = sc.next();
         switch (i) {
           case "yes":
@@ -68,7 +68,7 @@ public class Game {
             System.out.print("yes/no\n");
             break;
         }
-      } while (true);
+      };
     }
   }
 
